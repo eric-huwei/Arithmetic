@@ -25,11 +25,12 @@ public class ArrayQueue {
      */
     public boolean enqueue(String item) {
         if (tail == n) {
-            if (head ==0) {
+            if (head == 0) {
                 return false;
             }
+
             for (int i = head; i < tail; i++) {
-                items[i-head] = items[i];
+                items[i - head] = items[i];
             }
             tail = tail - head;
             head = 0;
@@ -61,7 +62,4 @@ public class ArrayQueue {
         return head;
     }
 
-    public int getTail() {
-        return tail;
-    }
 }
