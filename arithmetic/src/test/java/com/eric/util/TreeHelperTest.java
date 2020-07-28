@@ -12,11 +12,14 @@ import static org.junit.Assert.*;
 public class TreeHelperTest {
 
     @Test
-    public TreeNode createTreeNode() {
+    public void createTreeNode() {
+        String treeNodeValues = "3,9,20,#,#,15,7";
         TreeHelper treeHelper = new TreeHelper();
+        treeHelper.setValues(treeNodeValues);
+
         TreeNode root = treeHelper.createTree();
-        System.out.println("创建二叉树成功！");
-        return root;
+        System.out.println("创建二叉树成功！" + root.toString());
+        System.out.println("二叉树深度" + treeHelper.getTreeHeight(root));
     }
 
 

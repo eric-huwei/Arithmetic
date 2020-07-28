@@ -7,7 +7,7 @@ package com.eric.util;
  */
 public class TreeHelper {
 
-    static int index;
+    static int index = 0;
     static String[] values;
 
     public TreeHelper(){}
@@ -16,7 +16,6 @@ public class TreeHelper {
     public void setValues(String treeValues) {
         values = treeValues.split(",");
         index = 0;
-
     }
 
     // 递归建立二叉树
