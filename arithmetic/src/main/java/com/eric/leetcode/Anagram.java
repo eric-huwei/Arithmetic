@@ -42,5 +42,6 @@ public class Anagram {
     public static void main(String[] args) {
         String s = "anagram", t = "nagaram";
         System.out.println(isAnagram(s, t));
+        System.out.println(isAnagramHash(s, t));
     }
 }
