@@ -10,12 +10,12 @@ import java.util.Arrays;
 public class Anagram {
 
     public static boolean isAnagram(String s, String t) {
-        char[] strS = s.toCharArray();
-        char[] strT = t.toCharArray();
-        Arrays.sort(strS);
-        Arrays.sort(strT);
+        char[] sChar = s.toCharArray();
+        char[] tChar = t.toCharArray();
+        Arrays.sort(sChar);
+        Arrays.sort(tChar);
 
-        return Arrays.equals(strS, strT);
+        return Arrays.equals(sChar, tChar);
     }
 
     public static boolean isAnagramHash(String s, String t) {
@@ -34,6 +34,7 @@ public class Anagram {
                 return false;
             }
         }
+
         return true;
     }
 
