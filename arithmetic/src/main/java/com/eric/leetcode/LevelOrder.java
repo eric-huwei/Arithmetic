@@ -12,9 +12,12 @@ import java.util.List;
  */
 public class LevelOrder {
 
+
+    /**
+     * BFS 遍历使用队列数据结构
+     */
     List<List<Integer>> levels = new ArrayList<List<Integer>>();
 
-    //递归
     public List<List<Integer>> levelOrder(TreeNode root) {
         if (null == root) {
             return levels;
