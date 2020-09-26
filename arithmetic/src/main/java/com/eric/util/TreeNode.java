@@ -15,6 +15,12 @@ public class TreeNode {
     public TreeNode right;
 
     public TreeNode(int data) {
+        super();
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return data + " ";
     }
 }

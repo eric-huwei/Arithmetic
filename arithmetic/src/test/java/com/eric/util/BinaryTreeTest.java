@@ -9,5 +9,10 @@ import org.junit.Test;
  */
 public class BinaryTreeTest {
 
-
+    @Test
+    public void testPreOrder() {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+        BinaryTree tree = new BinaryTree(arr, 0);
+        tree.preOrder(tree.root);
+    }
 }
