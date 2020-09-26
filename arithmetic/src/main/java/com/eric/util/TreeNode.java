@@ -10,17 +10,18 @@ import lombok.ToString;
 @ToString
 public class TreeNode {
 
-    public int data;
+    public Object data;
     public TreeNode left;
     public TreeNode right;
 
-    public TreeNode(int data) {
-        super();
-        this.data = data;
+    public TreeNode(Object obj) {
+        this.data = obj;
     }
 
     @Override
     public String toString() {
         return data + " ";
     }
+
+
 }

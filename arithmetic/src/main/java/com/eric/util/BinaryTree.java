@@ -9,15 +9,14 @@ public class BinaryTree {
 
     public TreeNode root = null;
 
-
-    public BinaryTree(int[] array, int index) {
+    public BinaryTree(Object[] array, int index) {
         root = createBinaryTree(array, index);
     }
 
     /**
      * 创建二叉树
      */
-    private TreeNode createBinaryTree(int[] array, int index) {
+    private TreeNode createBinaryTree(Object[] array, int index) {
         TreeNode treeNode = null;
         if (index < array.length) {
             treeNode = new TreeNode(array[index]);
