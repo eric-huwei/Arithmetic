@@ -39,7 +39,7 @@ public class TreeHelper {
         if (root == null) {
             return;
         } else {
-            System.out.print(root.val + " ");
+            System.out.print(root.data + " ");
             preOrder(root.left);
             preOrder(root.right);
         }
@@ -51,7 +51,7 @@ public class TreeHelper {
             return;
         } else {
             preOrder(root.left);
-            System.out.print(root.val + " ");
+            System.out.print(root.data + " ");
             preOrder(root.right);
         }
     }
@@ -63,7 +63,7 @@ public class TreeHelper {
         } else {
             preOrder(root.left);
             preOrder(root.right);
-            System.out.print(root.val + " ");
+            System.out.print(root.data + " ");
         }
     }
 
@@ -101,19 +101,19 @@ public class TreeHelper {
         if (root == null) {
             return true;
         }
-        if (root.val < min || root.val > max) {
+        if (root.data < min || root.data > max) {
             return false;
         }
-        return isBSTResolve(root.left, min, root.val) && isBSTResolve(root.right, root.val, max);
+        return isBSTResolve(root.left, min, root.data) && isBSTResolve(root.right, root.data, max);
     }
 
     //根据值查找二叉树搜索树root的某个节点
     public TreeNode findNode(TreeNode rootBST, int val) {
         if (rootBST == null) {
             return null;
-        } else if (rootBST.val < val) {
+        } else if (rootBST.data < val) {
             return findNode(rootBST.right, val);
-        } else if (rootBST.val > val) {
+        } else if (rootBST.data > val) {
             return findNode(rootBST.left, val);
         }
         return rootBST;
@@ -124,9 +124,9 @@ public class TreeHelper {
         if (rootBST == null) {
             rootBST = new TreeNode(val);
         } else {
-            if (val < rootBST.val) {
+            if (val < rootBST.data) {
                 rootBST.left = insertNode(rootBST.left, val);
-            } else if (val > rootBST.val) {
+            } else if (val > rootBST.data) {
                 rootBST.right = insertNode(rootBST.right, val);
             }
         }
@@ -138,15 +138,15 @@ public class TreeHelper {
         if (findNode(rootBST, val) == null) {
             System.out.println("要删除的节点不存在！");
         } else {
-            if (val < rootBST.val) {
+            if (val < rootBST.data) {
                 rootBST.left = deleteNode(rootBST.left, val);
-            } else if (val > rootBST.val) {
+            } else if (val > rootBST.data) {
                 rootBST.right = deleteNode(rootBST.right, val);
             } else {  //rootBST就是要被删除的节点
                 if (rootBST.left != null && rootBST.right != null) {  //被删除的节点的左右子节点均存在
                     TreeNode tmp = findMinNode(rootBST.right);  //从右子树找到值最小的节点填充删除节点
-                    rootBST.val = tmp.val;
-                    rootBST.right = deleteNode(rootBST.right, rootBST.val);  //删除右子树值最小的元素
+                    rootBST.data = tmp.data;
+                    rootBST.right = deleteNode(rootBST.right, rootBST.data);  //删除右子树值最小的元素
                 } else {  //被删除的节点只有一个或者无子节点存在
                     //被删除节点的左子节点为空，则右子节点取代根节点
                     if (rootBST.left == null) {
